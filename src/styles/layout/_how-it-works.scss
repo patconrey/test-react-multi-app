@@ -1,0 +1,14 @@
+.how-it-works {
+    padding: 8rem;
+    display: flex;
+    justify-content: space-around;
+    min-height: 70vh;
+
+    @include respond(tab-port) {
+        flex-direction: column;
+    }
+
+    @include respond(phone) {
+        padding: 4rem;
+    }
+}

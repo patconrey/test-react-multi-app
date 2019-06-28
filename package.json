@@ -6,7 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --mode development",
-    "build": "webpack --mode production"
+    "compile:sass:landing": "node-sass src/styles/landing.main.scss public/css/landing.stlye.comp.css",
+    "prefix:css:landing": "postcss --use autoprefixer -b 'last 10 versions' public/css/landing.stlye.comp.css -o public/css/landing.style.prefix.css",
+    "compress:css:landing": "node-sass public/css/landing.style.prefix.css public/css/landing.css --output-style compressed",
+    "build:sass:landing": "npm-run-all compile:sass:landing prefix:css:landing compress:css:landing",
+    "watch:sass:landing": "node-sass src/styles/landing.main.scss public/css/landing.css -w",
+    "devserver": "live-server --open=public/index.html",
+    "build": "npm run build:sass:landing && webpack --mode production"
   },
   "keywords": [],
   "author": "",
@@ -16,9 +22,13 @@
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
+    "autoprefixer": "^9.6.0",
     "babel-loader": "^8.0.6",
+    "concat": "^1.0.3",
     "css-loader": "^3.0.0",
     "node-sass": "^4.12.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^6.1.2",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.35.0",

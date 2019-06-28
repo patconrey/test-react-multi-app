@@ -1,0 +1,7 @@
+.testimonial {
+    padding: 8rem;
+
+    @include respond(tab-port) {
+        padding: 4rem;
+    }
+}

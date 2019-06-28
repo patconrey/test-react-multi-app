@@ -1,0 +1,44 @@
+.hero {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 8rem;
+    min-height: 90vh;
+
+    @include respond(phone) {
+        padding: 4rem;
+    }
+
+    &--landing {
+        background-image: url("https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    &__title-container {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        background-color: rgba(0, 0, 0, .4);
+        padding: 2rem;
+        border-radius: 4px;
+
+        @include respond(tab-land) {
+            width: 75%;
+        }
+
+        @include respond(phone) {
+            width: 100%;
+        }
+    }
+
+    &__cta-container {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        margin-top: 4rem;
+    }
+}
