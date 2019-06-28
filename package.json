@@ -5,12 +5,17 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --mode development",
+    "dev": "ENV=.env.development webpack-dev-server --mode development",
     "compile:sass:landing": "node-sass src/styles/landing.main.scss public/css/landing.stlye.comp.css",
     "prefix:css:landing": "postcss --use autoprefixer -b 'last 10 versions' public/css/landing.stlye.comp.css -o public/css/landing.style.prefix.css",
     "compress:css:landing": "node-sass public/css/landing.style.prefix.css public/css/landing.css --output-style compressed",
     "build:sass:landing": "npm-run-all compile:sass:landing prefix:css:landing compress:css:landing",
     "watch:sass:landing": "node-sass src/styles/landing.main.scss public/css/landing.css -w",
+    "compile:sass:dashboard": "node-sass src/styles/dashboard.main.scss public/css/dashboard.stlye.comp.css",
+    "prefix:css:dashboard": "postcss --use autoprefixer -b 'last 10 versions' public/css/dashboard.stlye.comp.css -o public/css/dashboard.style.prefix.css",
+    "compress:css:dashboard": "node-sass public/css/dashboard.style.prefix.css public/css/dashboard.css --output-style compressed",
+    "build:sass:dashboard": "npm-run-all compile:sass:dashboard prefix:css:dashboard compress:css:dashboard",
+    "watch:sass:dashboard": "node-sass src/styles/dashboard.main.scss public/css/dashboard.css -w",
     "devserver": "live-server --open=public/index.html",
     "build": "npm run build:sass:landing && webpack --mode production"
   },
@@ -26,6 +31,7 @@
     "babel-loader": "^8.0.6",
     "concat": "^1.0.3",
     "css-loader": "^3.0.0",
+    "dotenv": "^8.0.0",
     "node-sass": "^4.12.0",
     "npm-run-all": "^4.1.5",
     "postcss-cli": "^6.1.2",
@@ -36,8 +42,10 @@
     "webpack-dev-server": "^3.7.2"
   },
   "dependencies": {
+    "axios": "^0.19.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-hot-loader": "^4.11.1"
+    "react-hot-loader": "^4.11.1",
+    "react-router-dom": "^5.0.1"
   }
 }

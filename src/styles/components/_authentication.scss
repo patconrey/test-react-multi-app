@@ -1,0 +1,27 @@
+.authentication {
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0 .3rem 1rem rgba(0, 0, 0, .1);
+    border-radius: 4px;
+    border: 1px solid var(--color-grey-dark-1);
+    width: 50%;
+
+    &__title {
+        margin-bottom: 4rem;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    @include respond(tap-port) {
+        width: 75%;
+    }
+
+    @include respond(phone) {
+        width: 100%;
+    }
+}

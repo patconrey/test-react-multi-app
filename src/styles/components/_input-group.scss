@@ -1,0 +1,28 @@
+.input-group {
+    display: flex;
+    flex-direction: column;
+    &:not(:last-child) {
+        margin-bottom: 2rem;
+    }
+
+    &__label {
+        font-size: 1.6rem;
+        color: var(--color-grey-dark-3);
+    }
+
+    &__input {
+        padding: 1rem;
+        font-size: 1.6rem;
+        border-radius: 4px;
+        outline: none;
+        border: 1px solid var(--color-grey-dark-2);
+        font-family: inherit;
+        color: var(--color-grey-dark-3);
+
+        &:focus {
+            outline: none;
+            border: none;
+            border: 1px solid rgba(45, 201, 248, 0.849);
+        }
+    }
+}
