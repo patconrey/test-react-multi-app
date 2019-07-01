@@ -90,11 +90,16 @@ body {
   color: var(--color-grey-dark-3);
   display: inline-block;
   padding: 1rem 2rem;
-  border-radius: 3px; }
+  border-radius: 3px;
+  font-family: inherit;
+  cursor: pointer; }
   .button:link, .button:visited {
     text-decoration: none; }
   .button--solid-white {
     color: var(--color-grey-dark-3);
+    background-color: #fff; }
+  .button--green {
+    color: #00cf79;
     background-color: #fff; }
   .button--white {
     color: #fff;
@@ -192,6 +197,16 @@ body {
         padding: 4rem 0; } }
   .testimonial-callout__title {
     margin-bottom: 4rem; }
+
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-grey-light-2);
+  min-height: 100vh; }
+  @media only screen and (max-width: 37.5em) {
+    .section {
+      padding: 4rem; } }
 
 .how-it-works {
   padding: 8rem;
