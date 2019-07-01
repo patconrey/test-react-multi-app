@@ -2,13 +2,7 @@ const path = require("path")
 const webpack = require("webpack")
 const dotenv = require("dotenv")
 
-module.exports = () => {
-    const env = dotenv.config().parsed
-    const envKeys = Object.keys(env).reduce((prev, next) => {
-        prev[`process.env.${next}`] = JSON.stringify(env[next])
-        return prev
-      }, {})
-
+module.exports = (env) => {
     return {
         entry: [
             "regenerator-runtime/runtime",
@@ -54,8 +48,7 @@ module.exports = () => {
             },
         },
         plugins: [
-            new webpack.HotModuleReplacementPlugin(), 
-            new webpack.DefinePlugin(envKeys)
+            new webpack.HotModuleReplacementPlugin(),
         ],
     }
 }

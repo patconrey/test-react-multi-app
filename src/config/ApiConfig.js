@@ -1,2 +1,2 @@
-export const apiUrl = process.env.REACT_APP_API_URL
-export const clientId = process.env.REACT_APP_CLIENT_ID
+export const apiUrl = "http://Staging.ych2emfwyz.us-west-2.elasticbeanstalk.com/v1"
+export const clientId = "uABQS6AuthvABMAsPVHJ"
