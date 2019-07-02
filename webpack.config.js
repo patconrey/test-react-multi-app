@@ -1,6 +1,5 @@
 const path = require("path")
 const webpack = require("webpack")
-const dotenv = require("dotenv")
 
 module.exports = (env) => {
     return {
@@ -38,14 +37,6 @@ module.exports = (env) => {
             port: 3000,
             publicPath: "http://localhost:3000/dist/",
             hotOnly: true,
-            setup: function(app, server) {
-                app.get("/", (req, res) => {
-                    res.sendFile(path.join(__dirname, "public/index.html"))
-                })
-                app.get('/dashboard/*', function(req, res) {
-                    res.sendFile(path.join(__dirname, "public/dashboard.html"))
-                })
-            },
         },
         plugins: [
             new webpack.HotModuleReplacementPlugin(),

@@ -2,10 +2,7 @@ import React, { useState, useContext } from "react"
 import handleSignIn from "../authentication/handleSignIn"
 import { Redirect } from "react-router-dom"
 import UserContext from "../contexts/UserContext"
-// import "../styles/layout/_layout.scss"
-// import "../styles/components/_authentication.scss"
-// import "../styles/components/_input-group.scss"
-import "../styles/dashboard.main.scss"
+import "../styles/main.scss"
 
 const SignInScreen = () => {
     const [ email, setEmail ] = useState("")

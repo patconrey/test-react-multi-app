@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import handleSignUp from "../authentication/handleSignUp"
 import { Redirect } from "react-router-dom"
-import "../styles/dashboard.main.scss"
+import "../styles/main.scss"
 
 const SignUpScreen = () => {
     const [ email, setEmail ] = useState("")
